@@ -20,12 +20,19 @@ class TodoController extends Controller
         $this->todoService = $todoService;
     }
 
-    public function assign()
+    public function index()
     {
         $task = $this->todoService->taskList();
 
         return view('todo', ['tasks' => $task]);
 
+    }
+
+    public function taskList(): \Illuminate\Http\JsonResponse
+    {
+        $task = $this->todoService->taskList();
+
+        return response()->json(['data' => $task]);
     }
 
 

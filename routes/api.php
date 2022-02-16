@@ -27,6 +27,6 @@ Route::prefix('v1')
 
          /** Order route */
 
-         Route::get('/todo/assign', [TodoController::class, 'assign']);
+         Route::get('/todo/taskList', [TodoController::class, 'taskList']);
 
      });
